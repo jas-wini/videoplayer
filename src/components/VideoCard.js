@@ -1,15 +1,14 @@
 import formatDuration from "../utils/formatDuration";
 import { formatTimeAgo } from "../utils/formatTimeAgo";
 import { formatViews } from "../utils/formatViews";
-
+import { memo } from "react";
 const VideoCard = (props) => {
-  const { data } = props||{};
-  const { snippet, contentDetails, statistics } = data||{};
-  const { thumbnails, title, channelTitle, publishedAt } = snippet||{};
-  const { viewCount } = statistics||{};
-  const { duration } = contentDetails||{};
-  const { url } = thumbnails?.high||{};
-
+  const { data } = props || {};
+  const { snippet, contentDetails, statistics } = data || {};
+  const { thumbnails, title, channelTitle, publishedAt } = snippet || {};
+  const { viewCount } = statistics || {};
+  const { duration } = contentDetails || {};
+  const { url } = thumbnails?.high || {};
   return (
     <div
       className={
@@ -41,4 +40,4 @@ const VideoCard = (props) => {
   );
 };
 
-export default VideoCard;
+export default memo(VideoCard);

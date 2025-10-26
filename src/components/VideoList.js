@@ -1,5 +1,5 @@
 import VideoCard from "./VideoCard";
-
+import { memo } from "react";
 const VideoList = (props) => {
   const { items } = props;
 
@@ -18,4 +18,4 @@ const VideoList = (props) => {
   );
 };
 
-export default VideoList;
+export default memo(VideoList);
